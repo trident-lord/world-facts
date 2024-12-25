@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .fact-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            min-height: 60px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>World History Fun Facts</h1>
+        <div id="fact" class="fact-box">
+            Click the button to see a fun fact!
+        </div>
+        <button id="generateFactButton">Generate Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Mount Everest grows approximately 4 millimeters every year due to geological uplift.",
+            "The Amazon Rainforest produces more than 20% of the world's oxygen supply.",
+            "Russia is so large that it spans 11 time zones.",
+            "The Sahara Desert is larger than the entire continental United States.",
+            "Lake Baikal in Siberia is the deepest and oldest freshwater lake in the world.",
+            "The Indus Valley Civilization was one of the world's earliest urban cultures, existing around 2500 BCE.",
+            "The Great Wall of China is not a single continuous wall but a series of walls and fortifications.",
+            "The Maya Civilization developed the concept of zero independently around the 4th century.",
+            "Ancient Egyptians were among the first to invent writing, with their hieroglyphic script.",
+            "The Roman Empire at its height covered approximately 5 million square kilometers.",
+            "The Hundred Years' War between England and France actually lasted 116 years, from 1337 to 1453.",
+            "The Trojan War, famous from Greek mythology, is believed to have been fought around the 12th century BCE.",
+            "The Battle of Stalingrad during World War II was one of the deadliest battles in history, with nearly 2 million casualties.",
+            "The Cold War was not a traditional war but a period of geopolitical tension between the Soviet Union and the United States.",
+            "The War of the Roses in England was a series of civil wars for control of the throne, lasting from 1455 to 1487.",
+            "The Library of Alexandria was one of the largest and most significant libraries of the ancient world.",
+            "Stonehenge in England is believed to have been constructed from 3000 BC to 2000 BC.",
+            "The Terracotta Army was buried with China's first Emperor, Qin Shi Huang, to protect him in the afterlife.",
+            "The Vikings were the first Europeans to reach North America, around 500 years before Columbus.",
+            "The Silk Road was an ancient network of trade routes that connected the East and West."
+        ];
+
+        document.getElementById('generateFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
