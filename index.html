@@ -6,8 +6,8 @@
     <title>Fun Facts</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,41 +17,81 @@
 
         .container {
             text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
         h1 {
-            color: #333;
+            color: #343a40;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .fact-box {
             margin: 20px 0;
-            padding: 15px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            min-height: 60px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            min-height: 80px;
+            font-size: 18px;
+            color: #495057;
+            position: relative;
+            z-index: 1;
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
+            padding: 12px 24px;
+            font-size: 18px;
+            color: #ffffff;
             background-color: #007bff;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            z-index: 1;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .globe {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/Globe_icon.svg') no-repeat center center;
+            background-size: contain;
+            opacity: 0.1;
+            animation: rotate 20s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="globe"></div>
         <h1>World History Fun Facts</h1>
         <div id="fact" class="fact-box">
             Click the button to see a fun fact!
